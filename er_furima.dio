@@ -13,19 +13,19 @@
                 <mxCell id="55" value="commodities" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="80" y="200" width="160" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="56" value="+name&#10;+detail&#10;+price&#10;+category&#10;+seller_area&#10;+send_day&#10;+condition&#10;+user_id&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="55" vertex="1">
+                <mxCell id="56" value="+name&#10;+detail&#10;+price&#10;+category_id&#10;+prefecture_id&#10;+send_day_id&#10;+condition_id&#10;+user_id&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="55" vertex="1">
                     <mxGeometry y="30" width="160" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="57" value="users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="320" y="200" width="160" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="58" value="+nickname&#10;+last_name&#10;+first_name&#10;+last_kana&#10;+first_kana&#10;+birth_year&#10;+birth_month&#10;+birth_day" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="57" vertex="1">
+                <mxCell id="58" value="+nickname&#10;+last_name&#10;+first_name&#10;+last_kana&#10;+first_kana&#10;+birth_day" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="57" vertex="1">
                     <mxGeometry y="30" width="160" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="59" value="buyer_address" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="210" y="630" width="160" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="60" value="+post_code&#10;+prefecture&#10;+city&#10;+address&#10;+building_name&#10;+phone_number&#10;+buy_id" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="59" vertex="1">
+                <mxCell id="60" value="+post_code&#10;+prefecture_id&#10;+city&#10;+address&#10;+building_name&#10;+phone_number&#10;+buy_id" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="59" vertex="1">
                     <mxGeometry y="30" width="160" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="62" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;strokeWidth=3;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="58" target="56" edge="1">
@@ -52,7 +52,7 @@
                         <mxPoint x="480" y="515" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="67" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;strokeWidth=3;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="39" target="58">
+                <mxCell id="67" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;strokeWidth=3;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="39" target="58" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="470" y="540" as="sourcePoint"/>
                         <mxPoint x="540" y="420" as="targetPoint"/>
