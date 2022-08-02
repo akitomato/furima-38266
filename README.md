@@ -11,24 +11,22 @@
 | first_name           | string  | null: false |
 | last_kana            | string  | null: false |
 | first_kana           | string  | null: false |
-| birth_year           | integer | null: false |
-| birth_month          | integer | null: false |
-| birth_day            | integer | null: false |
+| birth_day            | date    | null: false |
 
 ## users アソシエーション
 
 - has_many :commodities
-- has_many :comments
-- has_one  :buy
+- has_many :buys
 
 ## commodities テーブル
 
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
 | name               | string     | null: false |
+| detail             | text       | null: false |
 | price              | integer    | null: false |
 | category           | text       | null: false |
-| seller_area        | string     | null: false |
+| prefecture_id      | integer    | null: false |
 | send_day           | string     | null: false |
 | condition          | string     | null: false |
 | user               | references | null: false, foreign_key: true|
@@ -37,51 +35,33 @@
 
 - belongs_to :user
 - has_one :buy
-- has_many :comments
 
-## comments テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | -----------                    |
-| text               | text       | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| commodity          | references | null: false, foreign_key: true |
-
-## comments アソシエーション
-
-- belongs_to :user
-- belongs_to :commodity
-
-## buy テーブル
+## buys テーブル
 
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
-| card_number        | integer    | null: false |
-| card_expiration    | integer    | null: false |
-| card_security_code | integer    | null: false |
 | user               | references | null:false, foreign_key: true|
 | commodity          | references | null:false, foreign_key: true|
-| buyer_address      | references | null:false, foreign_key: true|
 
 ## buy アソシエーション
 
-- has_one :user
-- has_one :commodity
+- belongs_to :user
+- belongs_to :commodity
 - has_one :buyer_address
 
-## buyer_address テーブル
+## buyer_addresses テーブル
 
 | Column             | Type      | Options     |
 | ------------------ | --------- | ----------- |
-| post_code          | integer   | null: false |
-| prefecture         | string    | null: false |
+| post_code          | string    | null: false |
+| prefecture_id      | integer   | null: false |
 | city               | string    | null: false |
-| address            | text      | null: false |
-| building_name      | text      |             |
-| phone_number       | integer   | null: false |
+| address            | string    | null: false |
+| building_name      | string    |             |
+| phone_number       | string    | null: false |
 | buy                | references| null: false, foreign_key: true|
 
 ## buyer_address アソシエーション
 
-- has_one :buy
+- belongs_to :buy
 
