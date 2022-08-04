@@ -110,6 +110,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Birth day can't be blank")
       end
+      it '全角文字を含むパスワード' do
+        @user.password = 'Ａbc123'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password", "Password パスワードは、半角英数字混合での入力が必須です")
+      end
     end
   end
 end
