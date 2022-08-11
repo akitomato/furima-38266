@@ -25,10 +25,11 @@
 | name               | string     | null: false |
 | detail             | text       | null: false |
 | price              | integer    | null: false |
-| category_id        | integer       | null: false |
+| category_id        | integer    | null: false |
 | prefecture_id      | integer    | null: false |
-| send_day_id        | integer     | null: false |
-| condition_id       | integer     | null: false |
+| send_day_id        | integer    | null: false |
+| condition_id       | integer    | null: false |
+| delivery_charge_id | integer    | null: false |
 | user               | references | null: false, foreign_key: true|
 
 ## commodities アソシエーション

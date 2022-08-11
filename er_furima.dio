@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="WJA4-7QnVEWpg6S6cQAu" name="ページ1">
-        <mxGraphModel dx="602" dy="682" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="517" dy="539" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -11,16 +11,16 @@
                     <mxGeometry y="30" width="160" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="55" value="commodities" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="200" width="160" height="160" as="geometry"/>
+                    <mxGeometry x="80" y="200" width="160" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="56" value="+name&#10;+detail&#10;+price&#10;+category_id&#10;+prefecture_id&#10;+send_day_id&#10;+condition_id&#10;+user_id&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="55" vertex="1">
-                    <mxGeometry y="30" width="160" height="130" as="geometry"/>
+                <mxCell id="56" value="+name&#10;+detail&#10;+price&#10;+category_id&#10;+prefecture_id&#10;+send_day_id&#10;+condition_id&#10;+delivery_charge_id&#10;+user_id&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="55" vertex="1">
+                    <mxGeometry y="30" width="160" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="57" value="users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="320" y="200" width="160" height="160" as="geometry"/>
+                    <mxGeometry x="320" y="200" width="160" height="180" as="geometry"/>
                 </mxCell>
                 <mxCell id="58" value="+nickname&#10;+last_name&#10;+first_name&#10;+last_kana&#10;+first_kana&#10;+birth_day" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="57" vertex="1">
-                    <mxGeometry y="30" width="160" height="130" as="geometry"/>
+                    <mxGeometry y="30" width="160" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="59" value="buyer_address" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="210" y="630" width="160" height="160" as="geometry"/>
