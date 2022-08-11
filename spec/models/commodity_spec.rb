@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Commodity, type: :model do
-  
   before do
     @commodity = FactoryBot.build(:commodity)
   end
@@ -64,7 +63,7 @@ RSpec.describe Commodity, type: :model do
         expect(@commodity.errors.full_messages).to include("Price 価格は指定範囲内で入力必須です。(半角数字でご入力ください)")
       end
       it '価格が999,999,999より多い' do
-        @commodity.price = 1000000000
+        @commodity.price = 1_000_000_000
         @commodity.valid?
         expect(@commodity.errors.full_messages).to include("Price 価格は指定範囲内で入力必須です。(半角数字でご入力ください)")
       end

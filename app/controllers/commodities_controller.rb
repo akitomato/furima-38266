@@ -1,5 +1,6 @@
 class CommoditiesController < ApplicationController
   def index
+    @commodities = Commodity.order('created_at DESC')
   end
 
   def new
