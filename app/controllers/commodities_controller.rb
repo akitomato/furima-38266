@@ -1,14 +1,12 @@
 class CommoditiesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
+
   def index
     @commodities = Commodity.order('created_at DESC')
   end
 
   def new
-    if user_signed_in?
-      @commodity = Commodity.new
-    else
-      render("devise/sessions/new")
-    end
+    @commodity = Commodity.new
   end
 
   def create
