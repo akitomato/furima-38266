@@ -8,7 +8,7 @@ FactoryBot.define do
     condition_id        { Faker::Number.between(from: 2, to: 7) }
     delivery_charge_id  { Faker::Number.between(from: 2, to: 3) }
     price               { Faker::Number.between(from: 300, to: 999999999) }
-    #association :user
+    association :user
     #association :buy
 
     after(:build) do |commodity|

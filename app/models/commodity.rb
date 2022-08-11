@@ -6,7 +6,7 @@ class Commodity < ApplicationRecord
   belongs_to :condition
   belongs_to :delivery_charge
   has_one_attached :image
-  # belongs_to :user
+  belongs_to :user
   # has_one :buy
 
   with_options presence: { message: 'は必須項目です' } do
