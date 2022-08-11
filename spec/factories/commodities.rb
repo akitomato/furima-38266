@@ -7,9 +7,9 @@ FactoryBot.define do
     send_day_id         { Faker::Number.between(from: 2, to: 4) }
     condition_id        { Faker::Number.between(from: 2, to: 7) }
     delivery_charge_id  { Faker::Number.between(from: 2, to: 3) }
-    price               { Faker::Number.between(from: 300, to: 999999999) }
+    price               { Faker::Number.between(from: 300, to: 999_999_999) }
     association :user
-    #association :buy
+    # association :buy
 
     after(:build) do |commodity|
       commodity.image.attach(io: File.open('public/images/test20220726-2.png'), filename: 'test_image.png')
