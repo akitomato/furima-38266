@@ -73,6 +73,11 @@ RSpec.describe Commodity, type: :model do
         @commodity.valid?
         expect(@commodity.errors.full_messages).to include("Price 価格は指定範囲内で入力必須です。(半角数字でご入力ください)")
       end
+      it 'userが紐づいていない' do
+        @commodity.user = nil
+        @commodity.valid?
+        expect(@commodity.errors.full_messages).to include('User must exist')
+      end
     end
   end
 end
