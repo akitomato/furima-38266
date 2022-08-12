@@ -1,5 +1,6 @@
 class CommoditiesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :move_to_top_page, only: [:edit]
 
   def index
     @commodities = Commodity.order('created_at DESC')
@@ -22,11 +23,31 @@ class CommoditiesController < ApplicationController
     @commodity = Commodity.find(params[:id])
   end
 
+  def edit
+    @commodity = Commodity.find(params[:id])
+  end
+
+  def update
+    @commodity = Commodity.find(params[:id])
+    if @commodity.update(commodity_params)
+      redirect_to commodity_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def commodity_params
     params.require(:commodity).permit(
       :name, :detail, :price, :category_id, :prefecture_id, :send_day_id, :condition_id, :delivery_charge_id, :image
     ).merge(user_id: current_user.id)
+  end
+
+  def move_to_top_page
+    @commodity = Commodity.find(params[:id])
+    unless current_user.id == @commodity.user_id
+      redirect_to root_path
+    end
   end
 end
