@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "commodities#index"
-  resources :commodities, only: [:new, :create, :show] do
+  resources :commodities, only: [:new, :create, :show, :edit, :update] do
   end
 end
