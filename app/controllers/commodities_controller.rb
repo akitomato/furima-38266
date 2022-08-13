@@ -1,7 +1,7 @@
 class CommoditiesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :move_to_top_page, only: [:edit]
-  before_action :set_commodity, only: [:show, :edit, :update]
+  before_action :set_commodity, only: [:show, :edit, :update, :destroy]
 
   def index
     @commodities = Commodity.order('created_at DESC')
@@ -32,6 +32,11 @@ class CommoditiesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @commodity.destroy
+    redirect_to root_path
   end
 
   private
