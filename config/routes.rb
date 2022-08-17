@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "commodities#index"
-  resources :commodities, only: [:new, :create, :show, :edit, :update, :destroy] do
+  resources :commodities do
+    resources :orders, only: [:index, :create]
   end
 end

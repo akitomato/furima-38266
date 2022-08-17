@@ -2,6 +2,7 @@ class CommoditiesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :move_to_top_page, only: [:edit]
   before_action :set_commodity, only: [:show, :edit, :update, :destroy]
+  before_action :sold_out_move_to_top_page, only: [:edit]
 
   def index
     @commodities = Commodity.order('created_at DESC')
@@ -56,5 +57,11 @@ class CommoditiesController < ApplicationController
 
   def set_commodity
     @commodity = Commodity.find(params[:id])
+  end
+
+  def sold_out_move_to_top_page
+    if @commodity.buy.present?
+      redirect_to root_path
+    end
   end
 end
