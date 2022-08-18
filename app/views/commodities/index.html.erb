@@ -128,17 +128,16 @@
     </div>
     <ul class='item-lists'>
       <% @commodities.each do |commodity| %>
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <li class='list'>
         <%= link_to commodity_path(commodity.id) do %>
         <div class='item-img-content'>
           <%= image_tag commodity.image, class: "item-img" %>
 
-          <%# 商品が売れていればsold outを表示しましょう %>
+          <% if commodity.buy.present? %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
-          <%# //商品が売れていればsold outを表示しましょう %>
+          <% end %>
 
         </div>
         <div class='item-info'>
@@ -155,7 +154,6 @@
         </div>
         <% end %>
       </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% end %>
       <% unless @commodities.present? %>
       <li class='list'>
