@@ -28,27 +28,27 @@ RSpec.describe BuyBuyeraddress, type: :model do
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("Commodity 入力必須です")
       end
-      it 'post_code = nil' do
+      it 'post_codeが空の場合' do
         @buy_buyeraddress.post_code = ''
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("Post code 入力必須です")
       end
-      it 'prefecture_id = 1' do
+      it 'prefecture_idが1で選択されていないとき' do
         @buy_buyeraddress.prefecture_id = 1
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("Prefecture 選択必須項目です")
       end
-      it 'city = nil' do
+      it 'cityが空の時' do
         @buy_buyeraddress.city = ''
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("City 入力必須です")
       end
-      it 'address = nil' do
+      it 'addressが空の時' do
         @buy_buyeraddress.address = ''
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("Address 入力必須です")
       end
-      it 'phone_number = nil' do
+      it 'phone_numberが空の時' do
         @buy_buyeraddress.phone_number = ''
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("Phone number 入力必須です")
@@ -87,6 +87,11 @@ RSpec.describe BuyBuyeraddress, type: :model do
         @buy_buyeraddress.phone_number = '123456789０'
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("Phone number ハイフンなしで正しく入力してください")
+      end
+      it 'tokenが空の時' do
+        @buy_buyeraddress.token = ''
+        @buy_buyeraddress.valid?
+        expect(@buy_buyeraddress.errors.full_messages).to include("Token 入力必須です")
       end
     end
   end
