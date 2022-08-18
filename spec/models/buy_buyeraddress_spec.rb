@@ -33,7 +33,7 @@ RSpec.describe BuyBuyeraddress, type: :model do
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("Post code 入力必須です")
       end
-      it 'prefecture_idが1で選択されていないとき' do
+      it 'prefecture_idが1以外で選択されていないとき' do
         @buy_buyeraddress.prefecture_id = 1
         @buy_buyeraddress.valid?
         expect(@buy_buyeraddress.errors.full_messages).to include("Prefecture 選択必須項目です")
