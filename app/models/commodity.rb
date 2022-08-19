@@ -22,7 +22,7 @@ class Commodity < ApplicationRecord
     validates :delivery_charge_id
   end
   with_options presence: true, numericality: {
-    only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 999_999_999,
+    only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999,
     message: '価格は指定範囲内で入力必須です。(半角数字でご入力ください)'
   } do
     validates :price
