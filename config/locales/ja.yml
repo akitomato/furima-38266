@@ -14,11 +14,11 @@ ja:
         price: 値段
         category_id: ジャンル
         prefecture_id: 都道府県
-        send_day: 発送日数
+        send_day_id: 発送日数
         condition_id: 商品の状態
         delivery_charge_id: 配送料負担
         image: 画像
-      buyer_address: 購入者情報
+      buyer_address:
         post_code: 郵便番号
         prefecture_id: 都道府県
         city: 市区町村
