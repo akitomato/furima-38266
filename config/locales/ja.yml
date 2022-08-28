@@ -19,7 +19,7 @@ ja:
         delivery_charge_id: 配送料負担
         image: 画像
       buyer_address: 購入者情報
-        post_code: 
+        post_code: 郵便番号
         prefecture_id: 都道府県
         city: 市区町村
         address: 番地以降
